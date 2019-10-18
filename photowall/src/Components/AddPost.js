@@ -5,7 +5,8 @@ import serializeForm from 'form-serialize'
 class Single extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
-    const values = serializeForm(e.target, { hash: true })	
+    const values = serializeForm(e.target, { hash: true })
+    console.log(values);
     if (values["imageLink"] && values["description"]) {
     values.id = Number(new Date())
     this.props.addPicture(values.id,values.imageLink,values.description)
@@ -28,5 +29,3 @@ class Single extends Component {
 }
 
 export default Single;
-
-
